@@ -1,0 +1,11 @@
+[package]
+name = "sensor_read"
+version = "0.1.0"
+authors = ["Pedro Oporto pdevasconcelloso@wpi.edu"]
+
+[[bin]]
+name = "readIMU"
+path = "readIMU.rs"
+
+[dependencies]
+rppal = "0.11.3"

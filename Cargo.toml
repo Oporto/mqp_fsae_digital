@@ -2,7 +2,7 @@
 name = "sensor_read"
 version = "0.1.0"
 authors = ["Pedro Oporto pdevasconcelloso@wpi.edu"]
-
+edition = '2018'
 [[bin]]
 name = "readIMU"
 path = "readIMU.rs"

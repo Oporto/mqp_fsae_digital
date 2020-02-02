@@ -38,8 +38,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 	println!("Who is it? it is {:?}", imu_who);
 
     let mut reg_imu = [0u8; 1]; //Each data point for this sensor
-    loop {
-        i2c_imu.block_read(REG_ACCX, &mut reg_imu)?;
+    for n in (0u8..){
+        i2c_imu.block_read(n, &mut reg_imu)?;
 		println!("Data read: {:?}", reg_imu);
         thread::sleep(Duration::from_secs(1));
     }

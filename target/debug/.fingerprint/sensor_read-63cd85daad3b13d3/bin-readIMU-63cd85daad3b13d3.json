@@ -1,1 +1,0 @@
-{"rustc":7815807493188117355,"features":"[]","target":16952825739446067960,"profile":14996655781355331481,"path":10476515755034188115,"deps":[[1898790316477924112,"rppal",false,4243598510696265421]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/sensor_read-63cd85daad3b13d3/dep-bin-readIMU-63cd85daad3b13d3"}}],"rustflags":[],"metadata":15302525737420880646}

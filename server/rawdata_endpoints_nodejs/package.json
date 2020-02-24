@@ -1,0 +1,15 @@
+{
+  "name": "rawdata_endpoints",
+  "version": "1.0.0",
+  "description": "enpoints for pi to send raw data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@google-cloud/firestore": "^3.5.1",
+    "express": "^4.16.4"
+  }
+}

@@ -53,7 +53,7 @@ fn dec2bcd(dec: u8) -> u8 {
     ((dec / 10) << 4) | (dec % 10)
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn readIMU(){
     let mut i2c_imu = I2c::new()?;
 	let mut imu_who = [0u8;1];
 
@@ -91,9 +91,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     i2c_imu.block_write(i2c_mst_ctrl, &i2c_mst_clk[0..1])?;
     
     let mut reg_imu = [0u8; 14]; //Each data point for this sensor
-    for n in 0..10{
-        i2c_imu.block_read(REG_ACC, &mut reg_imu)?;
-	    println!("Data read: {:?}", reg_imu);
-    }
-    return Ok(());
+    i2c_imu.block_read(REG_ACC, &mut reg_imu)?;
+    reg_imu
 }

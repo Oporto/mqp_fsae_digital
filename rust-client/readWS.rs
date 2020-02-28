@@ -30,7 +30,7 @@ fn readWS(){
         else if(!read){
             in_interval = true;
         }
-        thread::sleep(Duration::from_millis(1));
+        thread::sleep(Duration::from_micros(10));
     }
 
     let mut iter = intervals.iter();
@@ -40,5 +40,5 @@ fn readWS(){
     for i in 0..size {
         sum = sum + iter.next();
     }
-    return sum/size;
+    sum/size
 }

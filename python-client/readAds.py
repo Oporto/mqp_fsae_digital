@@ -4,7 +4,7 @@ import Adafruit_ADS1x15 as ADS1x15
 class Ads_reader:
     "Includes driver for reading from an ADS 1115"
     def __init__(self, addr):
-        self.adc = ADS1x15.ADS1115(address=addr, bus=1)
+        self.adc = ADS1x15.ADS1115(address=addr)
         self.GAIN = 1
 
     #General reads

@@ -1,4 +1,4 @@
-import micropython
+
 from machine import I2C, Pin, Timer
 from mpu9250 import MPU9250
 from ak8963 import AK8963

@@ -20,3 +20,8 @@ class Ads_reader:
 
     def read_thermistor(self):
         return self.read_single(0)
+
+
+ads = Ads_reader(0x48)
+
+print(ads.read_thermistor())

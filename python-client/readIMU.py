@@ -3,7 +3,6 @@ from machine import I2C, Pin, Timer
 from mpu9250 import MPU9250
 from ak8963 import AK8963
 
-micropython.alloc_emergency_exception_buf(100)
 
 i2c = I2C(scl=Pin(3), sda=Pin(2))
 

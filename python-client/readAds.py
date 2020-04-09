@@ -5,7 +5,7 @@ class Ads_reader:
     "Includes driver for reading from an ADS 1115"
     def __init__(self, addr):
         self.adc = ADS1x15.ADS1115(address=addr)
-        self.GAIN = 1
+        self.GAIN = 2/3
 
     #General reads
     def read_single(self,ch):

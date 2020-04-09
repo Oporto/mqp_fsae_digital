@@ -1,24 +1,26 @@
+import time
+from mpu9250_jmdev.registers import *
+from mpu9250_jmdev.mpu_9250 import MPU9250
 
-from machine import I2C, Pin, Timer
-from mpu9250 import MPU9250
-from ak8963 import AK8963
+mpu = MPU9250(
+    address_ak=AK8963_ADDRESS, 
+    address_mpu_master=MPU9050_ADDRESS_68, # In 0x68 Address
+    address_mpu_slave=None, 
+    bus=1, 
+    gfs=GFS_1000, 
+    afs=AFS_8G, 
+    mfs=AK8963_BIT_16, 
+    mode=AK8963_MODE_C100HZ)
 
+mpu.configure() # Apply the settings to the registers.
 
-i2c = I2C(scl=Pin(3), sda=Pin(2))
+while True:
 
-dummy = MPU9250(i2c) # this opens the bybass to access to the AK8963
-ak8963 = AK8963(i2c)
-offset, scale = ak8963.calibrate(count=256, delay=200)
+    print("|.....MPU9250 in 0x68 Address.....|")
+    print("Accelerometer", mpu.readAccelerometerMaster())
+    print("Gyroscope", mpu.readGyroscopeMaster())
+    print("Magnetometer", mpu.readMagnetometerMaster())
+    print("Temperature", mpu.readTemperatureMaster())
+    print("\n")
 
-sensor = MPU9250(i2c, ak8963=ak8963)
-
-def read_sensor(timer):
-    print(sensor.acceleration)
-    print(sensor.gyro)
-    print(sensor.magnetic)
-    print(sensor.temperature)
-
-print("MPU9250 id: " + hex(sensor.whoami))
-
-timer_0 = Timer(0)
-timer_0.init(period=1000, mode=Timer.PERIODIC, callback=read_sensor)
+    time.sleep(1)

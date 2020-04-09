@@ -8,7 +8,7 @@ use rppal::gpio::Gpio;
 const PIN_N: u8 = 23;
 const MAX_TIMINGS: u8 = 85;
 
-fn readHumTemp(){
+pub fn readHumTemp() -> [0u8; 5] {
     let mut dht11_data: [0u8; 5] = [0,0,0,0,0];
     let mut laststate = true;
     let mut counter = 0;

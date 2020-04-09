@@ -4,8 +4,9 @@ version = "0.1.0"
 authors = ["Pedro Oporto pdevasconcelloso@wpi.edu"]
 edition = '2018'
 [[bin]]
-name = "readIMU"
-path = "readIMU.rs"
+name = "main"
+path = "main.rs"
 
 [dependencies]
 rppal = "0.11.3"
+ads1x15 = "0.4.0"

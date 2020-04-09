@@ -7,7 +7,7 @@ use rppal::gpio::Gpio;
 
 const PIN_N: u8 = 23;
 
-fn readWS(){
+pub fn readWS() -> f32{
     let mut start = SystemTime::now();
     let gpio = Gpio::new()?;
     let mut pin = gpio.get(PIN_N)?.into_input();

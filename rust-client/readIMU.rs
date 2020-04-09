@@ -53,7 +53,7 @@ fn dec2bcd(dec: u8) -> u8 {
     ((dec / 10) << 4) | (dec % 10)
 }
 
-fn readIMU(){
+pub fn readIMU() -> [0u8; 14]{
     let mut i2c_imu = I2c::new()?;
 	let mut imu_who = [0u8;1];
 

@@ -22,6 +22,6 @@ class Ads_reader:
         return self.read_single(0)
 
 
-ads = Ads_reader(0x48)
+ads = Ads_reader(0x68)
 
 print(ads.read_thermistor())

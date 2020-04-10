@@ -10,11 +10,11 @@ class Ads_reader:
     #General reads
     def read_single(self,ch):
         rd = self.adc.read_adc(ch,self.GAIN)
-        return rd
+        return rd/32767
     
     def read_diff(self):
         rd = self.adc.read_adc_difference(self.GAIN)
-        return rd
+        return rd/32767
     
     #Now, function that vary based on what is installed 
 

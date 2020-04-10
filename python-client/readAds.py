@@ -19,9 +19,14 @@ class Ads_reader:
     #Now, function that vary based on what is installed 
 
     def read_thermistor(self):
-        return self.read_single(0)
+        return self.read_single(2)
 
 
-ads = Ads_reader(0x68)
+ads = Ads_reader(0x48)
 
+
+print(ads.read_diff())
+print(ads.read_single(0))
 print(ads.read_thermistor())
+print(ads.read_single(1))
+print(ads.read_single(3))

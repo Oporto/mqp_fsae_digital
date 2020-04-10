@@ -33,4 +33,6 @@ print(ads.read_single(3))
 
 while True:
     print("Difference between 0 and 1: ", ads.read_diff())
+    print("Thermistor at 2: ", ads.read_single(2))
+    print("Thermistor at 3: ", ads.read_single(3))
     time.sleep(0.5)

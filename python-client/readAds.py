@@ -13,7 +13,7 @@ class Ads_reader:
         return rd
     
     def read_diff(self):
-        rd = self.adc.read_adc_diff(self.GAIN)
+        rd = self.adc.read_adc(0,self.GAIN) - self.adc.read_adc(1,self.GAIN)
         return rd
     
     #Now, function that vary based on what is installed 

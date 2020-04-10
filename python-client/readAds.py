@@ -24,8 +24,6 @@ class Ads_reader:
 
 ads = Ads_reader(0x48)
 
-
-print(ads.read_diff())
 print(ads.read_single(0))
 print(ads.read_thermistor())
 print(ads.read_single(1))

@@ -1,4 +1,5 @@
 import Adafruit_ADS1x15 as ADS1x15
+import time
 
 
 class Ads_reader:
@@ -32,3 +33,4 @@ print(ads.read_single(3))
 
 while True:
     print("Difference between 0 and 1: ", ads.read_diff())
+    time.sleep(0.5)

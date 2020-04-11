@@ -34,4 +34,4 @@ print(ads.read_single(3))
 while True:
     print("Thermocouple: ", ads.read_diff())
     print("Thermistor: ", ads.read_single(3))
-    time.sleep(0.5)
+    time.sleep(4)

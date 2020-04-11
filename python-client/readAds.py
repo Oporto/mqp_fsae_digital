@@ -34,4 +34,4 @@ print(ads.read_single(3))
 for _ in range(15):
     print("Thermocouple: ", ads.read_diff())
     print("Thermistor: ", ads.read_single(3))
-    time.sleep(4)
+    time.sleep(6)

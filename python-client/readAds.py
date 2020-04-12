@@ -26,12 +26,6 @@ class Ads_reader:
 ads = Ads_reader(0x48)
 
 
-print(ads.read_single(0))
-print(ads.read_single(1))
-print(ads.read_thermistor())
-print(ads.read_single(3))
-
 for _ in range(15):
-    print("Thermocouple: ", ads.read_diff())
-    print("Thermistor: ", ads.read_single(3))
-    time.sleep(6)
+    print("Voltage Difference: ", ads.read_diff())
+    time.sleep(1)

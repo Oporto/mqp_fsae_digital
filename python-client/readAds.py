@@ -1,5 +1,5 @@
 import Adafruit_ADS1x15 as ADS1x15
-import time
+from time import time as tm
 import pandas as pd
 import numpy as np
 
@@ -37,11 +37,11 @@ class Ads_reader:
 
     def compute_reads_tc(self,time, step):
         tc_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
-        start_time = time.time()
+        start_time = tm()
         delta_t = 0
         while(delta_t <= time):
             volt = self.read_diff()
-            delta_t = time.time() - start_time
+            delta_t = tm() - start_time
             tc_read = tc_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":self.tc_function(volt)}, ignore_index=True)
             time.sleep(step)
 
@@ -49,11 +49,11 @@ class Ads_reader:
 
     def compute_reads_the(self,time, step):
         the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
-        start_time = time.time()
+        start_time = tm()
         delta_t = 0
         while(delta_t <= time):
             volt = self.read_diff()
-            delta_t = time.time() - start_time
+            delta_t = tm() - start_time
             the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":self.the_function(volt)}, ignore_index=True)
             time.sleep(step)
 

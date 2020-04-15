@@ -49,17 +49,19 @@ class Ads_reader:
         return tc_read
 
     def compute_reads_the(self,time, step):
-        the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
+        the_read = pd.DataFrame(columns=["Time","Voltage","Temperature","VoltageN","TemperatureN"])
         start_time = tm()
         delta_t = 0
         temp = 21
         try:
             while(delta_t <= time or (temp > 22)):
                 volt = self.read_single(3)
+                volt2 = self.read_single(2)
                 delta_t = tm() - start_time
                 temp = self.the_function(volt)
-                the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":temp}, ignore_index=True)
-                print(delta_t,volt,temp)
+                temp2 = self.the_function(volt2)
+                the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":temp, "VoltageN": volt2, "TemperatureN":temp2}, ignore_index=True)
+                print(delta_t,volt,temp,volt2,temp2)
                 sleep(step)
         except KeyboardInterrupt:
             print("stoped")
@@ -72,7 +74,7 @@ class Ads_reader:
 ads = Ads_reader(0x48)
 
 #tc = ads.compute_reads_tc(30,0.5)
-the = ads.compute_reads_the(30, 0.5)
+the = ads.compute_reads_the(30, 0.3)
 
 print(the)
 

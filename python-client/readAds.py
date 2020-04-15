@@ -53,14 +53,16 @@ class Ads_reader:
         start_time = tm()
         delta_t = 0
         temp = 21
-        while(delta_t <= time or (temp > 45)):
-            volt = self.read_single(2)
-            delta_t = tm() - start_time
-            temp = self.the_function(volt)
-            the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":temp}, ignore_index=True)
-            print(delta_t,temp)
-            sleep(step)
-
+        try:
+            while(delta_t <= time or (temp > 22)):
+                volt = self.read_single(2)
+                delta_t = tm() - start_time
+                temp = self.the_function(volt)
+                the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":temp}, ignore_index=True)
+                print(delta_t,volt,temp)
+                sleep(step)
+        except KeyboardInterrupt:
+            print("stoped")
         return the_read
 
 

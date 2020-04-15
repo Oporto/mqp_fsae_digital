@@ -69,5 +69,5 @@ the = ads.compute_reads_the(30, 0.5)
 
 print(the)
 
-#tc.to_excel("tc_"+str(tm())+".xslx")
-the.to_excel("the_"+str(tm())+".xslx")
+#tc.to_csv("tc_"+str(tm())+".csv")
+the.to_csv("the_"+str(tm())+".csv")

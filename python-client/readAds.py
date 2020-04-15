@@ -66,10 +66,10 @@ class Ads_reader:
 #create object of class above and give it i2C bus address: 0x48
 ads = Ads_reader(0x48)
 
-#tc = ads.compute_reads_tc(30,0.5)
+tc = ads.compute_reads_tc(30,0.5)
 the = ads.compute_reads_the(30, 0.5)
 
 print(the)
 
-#tc.to_csv("tc_"+str(tm())+".csv")
+tc.to_csv("tc_"+str(tm())+".csv")
 the.to_csv("the_"+str(tm())+".csv")

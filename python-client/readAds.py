@@ -52,11 +52,13 @@ class Ads_reader:
         the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = tm()
         delta_t = 0
-        volt = self.read_single(2)
-        while(delta_t <= time or (self.the_function(volt) < 45 and self.the_function(volt) > 40)):
+        temp = 21
+        while(delta_t <= time or (temp < 45 and temp > 40)):
             volt = self.read_single(2)
             delta_t = tm() - start_time
-            the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":self.the_function(volt)}, ignore_index=True)
+            temp = self.the_function(volt)
+            the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":temp}, ignore_index=True)
+            print(delta_t,temp)
             sleep(step)
 
         return the_read

@@ -53,7 +53,7 @@ class Ads_reader:
         start_time = tm()
         delta_t = 0
         while(delta_t <= time):
-            volt = self.read_diff()
+            volt = self.read_single(2)
             delta_t = tm() - start_time
             the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":self.the_function(volt)}, ignore_index=True)
             sleep(step)
@@ -64,10 +64,10 @@ class Ads_reader:
 #create object of class above and give it i2C bus address: 0x48
 ads = Ads_reader(0x48)
 
-tc = ads.compute_reads_tc(30,0.5)
+#tc = ads.compute_reads_tc(30,0.5)
 the = ads.compute_reads_the(30, 0.5)
 
 print(the)
 
-tc.to_excel("tc_"+tm()+".xslx")
-the.to_excel("the_"+tm()+".xslx")
+#tc.to_excel("tc_"+str(tm())+".xslx")
+the.to_excel("the_"+str(tm())+".xslx")

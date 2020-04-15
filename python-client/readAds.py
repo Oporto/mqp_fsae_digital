@@ -38,6 +38,7 @@ class Ads_reader:
     def compute_reads_tc(self,time, step):
         tc_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = time.time()
+        delta_t = 0
         while(delta_t <= time):
             volt = self.read_diff()
             delta_t = time.time() - start_time
@@ -49,6 +50,7 @@ class Ads_reader:
     def compute_reads_the(self,time, step):
         the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = time.time()
+        delta_t = 0
         while(delta_t <= time):
             volt = self.read_diff()
             delta_t = time.time() - start_time

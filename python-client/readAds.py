@@ -35,7 +35,7 @@ class Ads_reader:
         t_calibrated = 18.143*volt - 22.445
         return t_calibrated
 
-    def compute_reads_tc(time, step):
+    def compute_reads_tc(self,time, step):
         tc_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = time.time()
         while(delta_t <= time):
@@ -46,7 +46,7 @@ class Ads_reader:
 
         return tc_read
 
-    def compute_reads_the(time, step):
+    def compute_reads_the(self,time, step):
         the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = time.time()
         while(delta_t <= time):

@@ -52,13 +52,15 @@ class Ads_reader:
         the_read = pd.DataFrame(columns=["Time","Voltage","Temperature"])
         start_time = tm()
         delta_t = 0
-        while(delta_t <= time):
+        volt = self.read_single(2)
+        while(delta_t <= time or (self.the_function(volt) < 45 and self.the_function(volt) > 40)):
             volt = self.read_single(2)
             delta_t = tm() - start_time
             the_read = the_read.append({"Time": delta_t ,"Voltage":volt, "Temperature":self.the_function(volt)}, ignore_index=True)
             sleep(step)
 
         return the_read
+
 
 
 #create object of class above and give it i2C bus address: 0x48

@@ -27,7 +27,7 @@ class Ads_reader:
     def tc_function(self, volt):
         adj_volt = volt*10e6
         a = [0,0.025928,-0.0000007602961,0.00000000004637791,-2.165394E-15,6.048144E-20,-7.29342E-25]
-        t_raw = a[0]+a[1]*adj_volt+a[2]*(adj_volt^2)+a[3]*(adj_volt^3)+a[4]*(adj_volt^4)+a[5]*(adj_volt^^5)+a[6]*(adj_volt^6)
+        t_raw = a[0]+a[1]*adj_volt+a[2]*(adj_volt^2)+a[3]*(adj_volt^3)+a[4]*(adj_volt^4)+a[5]*(adj_volt^5)+a[6]*(adj_volt^6)
         t_calibrated = 1.3816*t_raw + 43.568
         return t_calibrated
 

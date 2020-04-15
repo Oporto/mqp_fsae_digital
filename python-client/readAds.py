@@ -53,7 +53,7 @@ class Ads_reader:
         start_time = tm()
         delta_t = 0
         temp = 21
-        while(delta_t <= time or (temp < 45 and temp > 40)):
+        while(delta_t <= time or (temp > 45)):
             volt = self.read_single(2)
             delta_t = tm() - start_time
             temp = self.the_function(volt)

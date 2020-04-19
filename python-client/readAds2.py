@@ -10,8 +10,8 @@ class Ads_reader:
         #Class creates version of adc 
         self.adc = ADS1x15.ADS1115(address=addr)
         #Set internal values for gain and max voltage that are paired
-        self.GAIN = 2/3
-        self.MAX_V = 6.144
+        self.GAIN = 16
+        self.MAX_V = 0.256 
 
     #General reads
     #Single read of channel ch: a0-0, a1-1, a2-2, a3-3

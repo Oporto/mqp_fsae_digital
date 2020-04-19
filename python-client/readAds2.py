@@ -74,7 +74,7 @@ class Ads_reader:
 ads = Ads_reader(0x48)
 
 #tc = ads.compute_reads_tc(30,0.5)
-the = ads.compute_reads_the(30, 0.1)
+the = ads.compute_reads_the(300, 0.1)
 
 print(the)
 

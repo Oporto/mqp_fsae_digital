@@ -54,8 +54,6 @@ if __name__ == '__main__':
             saved = 0
             print("Measured Distance = %.1f cm" % dist)
             print(obst)
-            if keyboard.is_pressed('r'):
-                saved = 1
             dt_read = dt_read.append({"Distance": dist ,"Obstacle":obst, "Saved":saved}, ignore_index=True)
             time.sleep(1)
  

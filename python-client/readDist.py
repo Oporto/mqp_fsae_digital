@@ -18,7 +18,7 @@ GPIO.setup(GPIO_ECHO, GPIO.IN)
 GPIO.setup(GPIO_OBSTACLE,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def obstacle():
-    return GPIO.input(ObstaclePin)
+    return GPIO.input(GPIO_OBSTACLE)
  
 def distance():
     # set Trigger to HIGH

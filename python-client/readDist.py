@@ -1,7 +1,6 @@
 #Libraries
 import RPi.GPIO as GPIO
 import time
-import keyboard
 import pandas as pd
  
 #GPIO Mode (BOARD / BCM)
@@ -55,10 +54,8 @@ if __name__ == '__main__':
             print(3)
             obst = obstacle()
             print(4)
-            saved = 0
             print("Measured Distance = %.1f cm" % dist)
-            if keyboard.is_pressed('r'):
-                saved = 1
+            saved = 1
             dt_read = dt_read.append({"Distance": dist ,"Obstacle":obst, "Saved":saved}, ignore_index=True)
             time.sleep(1)
  

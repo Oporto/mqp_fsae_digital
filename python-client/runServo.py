@@ -20,6 +20,13 @@ def SetAngle(angle):
 
 #Specify one or multiple servo angles
 SetAngle(90)
+SetAngle(80)
+SetAngle(70)
+SetAngle(60)
+SetAngle(50)
+SetAngle(40)
+SetAngle(0)
+
 
 #Stop the servo
 pwm.stop()

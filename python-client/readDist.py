@@ -1,7 +1,6 @@
 #Libraries
 import RPi.GPIO as GPIO
 import time
-import keyboard
 import pandas as pd
  
 #GPIO Mode (BOARD / BCM)
@@ -41,8 +40,10 @@ def distance():
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance = (TimeElapsed * 34300) / 2
- 
+    raw_distance = (TimeElapsed * 34300) / 2
+
+    distance = 1.02*raw_distance - 0.931
+    
     return distance
 
 if __name__ == '__main__':

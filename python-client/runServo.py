@@ -27,10 +27,7 @@ SetAngle(50)
 SetAngle(40)
 SetAngle(0)
 
-
 #Stop the servo
 pwm.stop()
 GPIO.cleanup()
-
-#If GPIO error messages appear, use the following:
-#GPIO.setwarnings(False)
+GPIO.setwarnings(False)

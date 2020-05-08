@@ -26,14 +26,14 @@ Seq = [[1,0,0,1],
        [0,0,1,0],
        [0,0,1,1],
        [0,0,0,1]]
-       
+
 StepCount = len(Seq)
 StepDir = 1 # Set to 1 for clockwise
             # Set to -1 for anti-clockwise
 
 # Read wait time from command line
 if len(sys.argv)>1:
-  WaitTime = int(sys.argv[1])/float(1000)
+  WaitTime = int(sys.argv[1])/float(10000)
 else:
   WaitTime = 10/float(1000)
 
